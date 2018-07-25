@@ -44,18 +44,18 @@ class TicTacToe
     @board.all?{|marker| marker == "X" || marker == "O"}
   end
 
-  def draw?(board)
+  def draw?
     !won? && full?
   end
 
-  def over?(board)
-    won?(board) || draw?(board)
+  def over?
+    won? || draw?
   end
 
-  def turn(board)
+  def turn
     puts "Please enter 1-9:"
     user_input = gets.strip
-    index = input_to_index(user_input)
+    @index = input_to_index(user_input)
     if valid_move?(board, index)
       move(board, index, current_player(board))
       display_board(board)
@@ -76,9 +76,9 @@ class TicTacToe
     board[index] = player
   end
 
-  def winner(board)
-    if winning_combo = won?(board)
-      board[winning_combo.first]
+  def winner
+    if winning_combo = won?
+      @board[winning_combo.first]
     end
   end
 
