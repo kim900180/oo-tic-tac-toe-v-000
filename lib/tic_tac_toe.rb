@@ -28,11 +28,11 @@ class TicTacToe
     index.between?(0,8) && !position_taken?(board, index)
   end
 
-  def won?(board)
-    WIN_COMBINATIONS.detect do |set|
-      board[set[0]] == board[set[1]] &&
-      board[set[1]] == board[set[2]] &&
-      position_taken?(board, set[0])
+  def won?
+    @WIN_COMBINATIONS.detect do |set|
+      @board[set[0]] == @board[set[1]] &&
+      @board[set[1]] == @board[set[2]] &&
+      position_taken?(@board, set[0])
     end
   end
 
