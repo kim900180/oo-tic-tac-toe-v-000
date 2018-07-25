@@ -86,9 +86,9 @@ class TicTacToe
     while !over?(board)
       turn(board)
     end
-    if won?(board)
-      puts "Congratulations #{winner(board)}!"
-    elsif draw?(board)
+    if won?
+      puts "Congratulations #{winner}!"
+    elsif draw?
       puts "Cat's Game!"
     end
   end
