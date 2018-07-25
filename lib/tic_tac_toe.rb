@@ -36,8 +36,8 @@ class TicTacToe
     end
   end
 
-  def full?(board)
-    board.all?{|marker| marker == "X" || marker == "O"}
+  def full?
+    @board.all?{|marker| marker == "X" || marker == "O"}
   end
 
   def draw?(board)
